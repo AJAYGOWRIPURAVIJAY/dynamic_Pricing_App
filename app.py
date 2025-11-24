@@ -10,13 +10,12 @@ import matplotlib.pyplot as plt
 
 @st.cache_resource
 def load_model():
-    # Load model from file in the same folder as app.py
-    return joblib.load("units_sold_model.pkl")
-
+    import joblib
+    return joblib.load("models/units_sold_model.pkl")
 
 @st.cache_data
 def load_data():
-    # Load CSV from file in the same folder as app.py
+    import pandas as pd
     return pd.read_csv("retail_dynamic_pricing_dataset.csv")
 
 
